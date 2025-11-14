@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinZen - Visualise réellement ton argent. Sans synchronisation bancaire.</title>
+    <meta name="description" content="L'app qui t'aide à comprendre combien tu as d'argent disponible, ce qui est déjà réservé, et comment piloter ton épargne en un coup d'œil.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #709C7A 0%, #EBD5B3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .phone-mockup {
+            background: linear-gradient(135deg, #00384A 0%, #709C7A 100%);
+            border-radius: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 56, 74, 0.25);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 56, 74, 0.1), 0 10px 10px -5px rgba(0, 56, 74, 0.04);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(112, 156, 122, 0.3);
+        }
+        
+        .btn-secondary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a8a65;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    
+    <!-- Header Sticky -->
+    <header class="sticky top-0 z-50 bg-[#00384A] shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <div class="bg-white rounded-full shadow-md flex items-center justify-center overflow-hidden">
+                        <img src="logo.png" alt="FinZen" class="h-12 sm:h-12 w-auto scale-150">
+                    </div>
+                </div>
+                <button onclick="openModal()" class="btn-primary bg-[#709C7A] text-white px-6 py-3 rounded-lg font-semibold text-sm sm:text-base">
+                    Rejoindre la liste d'attente
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-white to-gray-50 py-16 sm:py-24 lg:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <!-- Texte Hero -->
+                    <div class="text-center lg:text-left animate-fade-in-up">
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#00384A] leading-tight mb-6">
+                            Visualise réellement ton argent.<br>
+                            <span class="text-[#709C7A]">Sans synchronisation bancaire.</span>
+                        </h2>
+                        <p class="text-lg sm:text-xl text-gray-700 mb-8 leading-relaxed">
+                            L'app qui t'aide à comprendre combien tu as d'argent disponible, ce qui est déjà réservé, et comment piloter ton épargne en un coup d'œil.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6">
+                            <button onclick="openModal()" class="btn-primary bg-[#709C7A] text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                                Accéder en avant-première
+                            </button>
+                        </div>
+                        <p class="text-sm text-gray-600 flex items-center justify-center lg:justify-start gap-2">
+                            <span class="w-2 h-2 bg-[#709C7A] rounded-full"></span>
+                            100% manuel
+                            <span class="text-gray-400">•</span>
+                            <span class="w-2 h-2 bg-[#709C7A] rounded-full"></span>
+                            Sécurisé
+                            <span class="text-gray-400">•</span>
+                            <span class="w-2 h-2 bg-[#709C7A] rounded-full"></span>
+                            Simple
+                        </p>
+                    </div>
+                    <!-- Mockup Téléphone -->
+                    <div class="flex justify-center lg:justify-end animate-fade-in-up">
+                        <!-- <div class="phone-mockup w-64 sm:w-80 lg:w-96 h-[500px] sm:h-[600px] lg:h-[700px] flex items-center justify-center">
+                            <div class="bg-white/10 backdrop-blur-sm rounded-3xl w-[90%] h-[95%] flex items-center justify-center">
+                                <div class="text-white/30 text-center">
+                                    <svg class="w-24 h-24 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+                                    </svg>
+                                    <p class="text-sm">Mockup App</p>
+                                </div>
+                            </div> -->
+                        <div class="relative">
+                            <img src="mockup.png" alt="Mockup de l'application FinZen" class="w-64 sm:w-80 lg:w-96 h-auto drop-shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Problème → Solution -->
+    <section class="py-20 sm:py-28 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <!-- Problèmes -->
+                <div class="mb-16">
+                    <h3 class="text-3xl sm:text-4xl font-bold text-[#00384A] text-center mb-12">
+                        Tu te reconnais ?
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Problème 1 -->
+                        <div class="card-hover bg-gray-50 p-8 rounded-2xl border-2 border-gray-100">
+                            <div class="w-12 h-12 bg-[#EBD5B3] rounded-full flex items-center justify-center mb-6">
+                                <span class="text-2xl">💸</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-[#00384A] mb-4">
+                                Ton argent est éclaté partout ?
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                Comptes bancaires multiples, livrets, épargne... Tu ne sais plus où chercher.
+                            </p>
+                        </div>
+                        
+                        <!-- Problème 2 -->
+                        <div class="card-hover bg-gray-50 p-8 rounded-2xl border-2 border-gray-100">
+                            <div class="w-12 h-12 bg-[#EBD5B3] rounded-full flex items-center justify-center mb-6">
+                                <span class="text-2xl">❓</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-[#00384A] mb-4">
+                                Tu ne sais pas ce qui est vraiment disponible ?
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                Entre les réservations, les objectifs et les dépenses prévues, tu perds le fil.
+                            </p>
+                        </div>
+                        
+                        <!-- Problème 3 -->
+                        <div class="card-hover bg-gray-50 p-8 rounded-2xl border-2 border-gray-100">
+                            <div class="w-12 h-12 bg-[#EBD5B3] rounded-full flex items-center justify-center mb-6">
+                                <span class="text-2xl">😵</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-[#00384A] mb-4">
+                                Les apps sont trop complexes ?
+                            </h4>
+                            <p class="text-gray-600 leading-relaxed">
+                                Synchronisation bancaire, données sensibles, interfaces surchargées... Tu préfères la simplicité.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Solution -->
+                <div class="bg-gradient-to-r from-[#00384A] to-[#004d66] p-10 sm:p-16 rounded-3xl text-center">
+                    <div class="max-w-3xl mx-auto">
+                        <div class="w-16 h-16 bg-[#709C7A] rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-3xl">✨</span>
+                        </div>
+                        <h3 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+                            FinZen centralise, clarifie et simplifie ta vision financière.
+                        </h3>
+                        <p class="text-xl text-gray-200 leading-relaxed">
+                            Une seule app, une seule vue, une seule vérité sur ton argent. Sans connexion bancaire, sans stress.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Fonctionnalités -->
+    <section class="py-20 sm:py-28 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-3xl sm:text-4xl font-bold text-[#00384A] text-center mb-16">
+                    Comment ça marche ?
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    <!-- Fonctionnalité 1 -->
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="w-10 h-10 bg-[#709C7A] rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-white text-xl">🎯</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-[#00384A] mb-3">
+                            Objectifs personnalisés
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Impôts, vacances, voiture, urgence... Crée tes objectifs et suivez leur progression en temps réel.
+                        </p>
+                    </div>
+                    
+                    <!-- Fonctionnalité 3 -->
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="w-10 h-10 bg-[#709C7A] rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-white text-xl">👁️</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-[#00384A] mb-3">
+                            Vue disponible / réservé / souhaitable
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Distingue clairement ce que tu peux dépenser maintenant, ce qui est réservé, et ce que tu souhaites épargner.
+                        </p>
+                    </div>
+                    
+                    <!-- Fonctionnalité 4 -->
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="w-10 h-10 bg-[#709C7A] rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-white text-xl">🔒</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-[#00384A] mb-3">
+                            Sans connexion bancaire — 100% manuel
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Tu saisis tes revenus et dépenses manuellement. Aucune donnée bancaire n'est stockée ou partagée.
+                        </p>
+                    </div>
+                    
+                    <!-- Fonctionnalité 5 -->
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="w-10 h-10 bg-[#709C7A] rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-white text-xl">📱</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-[#00384A] mb-3">
+                            Dashboard visuel simple
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Une interface épurée et intuitive qui te donne toutes les informations importantes en un coup d'œil.
+                        </p>
+                    </div>
+                    
+                    <!-- Fonctionnalité 6 -->
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="w-10 h-10 bg-[#709C7A] rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-white text-xl">📝</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-[#00384A] mb-3">
+                            Suivi de tes dépenses
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Enregistre facilement tes dépenses et visualise ton historique pour mieux comprendre où va ton argent.
+                        </p>
+                    </div>
+                    
+                    <!-- Fonctionnalité 7 (bonus) -->
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <div class="w-10 h-10 bg-[#709C7A] rounded-lg flex items-center justify-center mb-4">
+                            <span class="text-white text-xl">⚡</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-[#00384A] mb-3">
+                            Rapide et léger
+                        </h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Une app native performante qui fonctionne même hors ligne. Tes données restent sur ton téléphone.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Persona / Pour qui ? -->
+    <section class="py-20 sm:py-28 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <h3 class="text-3xl sm:text-4xl font-bold text-[#00384A] text-center mb-16">
+                    Pour qui ?
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Freelances -->
+                    <div class="card-hover bg-gradient-to-br from-[#709C7A] to-[#5a8a65] p-8 rounded-2xl text-white">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">💼</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Freelances</h4>
+                        <p class="text-white/90 text-sm leading-relaxed">
+                            Gère tes revenus irréguliers et prépare-toi aux périodes creuses avec sérénité.
+                        </p>
+                    </div>
+                    
+                    <!-- Jeunes actifs -->
+                    <div class="card-hover bg-gradient-to-br from-[#00384A] to-[#004d66] p-8 rounded-2xl text-white">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">🚀</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Jeunes actifs</h4>
+                        <p class="text-white/90 text-sm leading-relaxed">
+                            Prends le contrôle de tes finances dès le début de ta carrière et construis de bonnes habitudes.
+                        </p>
+                    </div>
+                    
+                    <!-- Couples -->
+                    <div class="card-hover bg-gradient-to-br from-[#709C7A] to-[#5a8a65] p-8 rounded-2xl text-white">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">👫</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Couples</h4>
+                        <p class="text-white/90 text-sm leading-relaxed">
+                            Visualisez ensemble votre épargne commune et vos objectifs partagés en toute transparence.
+                        </p>
+                    </div>
+                    
+                    <!-- Entrepreneurs solo -->
+                    <div class="card-hover bg-gradient-to-br from-[#00384A] to-[#004d66] p-8 rounded-2xl text-white">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                            <span class="text-2xl">🏆</span>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Entrepreneurs solo</h4>
+                        <p class="text-white/90 text-sm leading-relaxed">
+                            Sépare clairement tes finances personnelles et professionnelles sans complexité.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section CTA Principal -->
+    <section class="py-20 sm:py-32 bg-[#00384A]">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-3xl sm:text-5xl font-bold text-white mb-8 leading-tight">
+                    Sache enfin combien tu peux dépenser<br class="hidden sm:block"> sans te mettre en danger.
+                </h3>
+                <p class="text-xl text-gray-200 mb-10 leading-relaxed">
+                    Rejoins la liste d'attente et sois parmi les premiers à découvrir FinZen.
+                </p>
+                <button onclick="openModal()" class="btn-primary bg-[#709C7A] text-white px-10 py-5 rounded-lg font-bold text-lg sm:text-xl shadow-xl">
+                    Rejoindre la liste d'attente
+                </button>
+                <p class="text-sm text-gray-300 mt-6">
+                    Sans engagement • Disponible bientôt sur iOS et Android
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div>
+                        <img src="logo.png" alt="FinZen" class="h-8 w-auto mb-4 brightness-0 invert opacity-90">
+                        <p class="text-sm leading-relaxed">
+                            L'app qui simplifie la gestion de ton épargne. Sans synchronisation bancaire, avec transparence.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Légal</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="hover:text-white transition">Mentions légales</a></li>
+                            <li><a href="#" class="hover:text-white transition">Politique de confidentialité</a></li>
+                            <li><a href="#" class="hover:text-white transition">CGU</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-4">Contact</h4>
+                        <p class="text-sm">
+                            <a href="mailto:contact@finzen.app" class="hover:text-white transition">contact@finzen.app</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                    <p>&copy; 2024 FinZen. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="waitlistModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm">
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- Modal Content -->
+            <div class="p-8 sm:p-12">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-[#00384A] mb-4">Rejoins la liste d'attente</h3>
+                    <p class="text-gray-600">Sois parmi les premiers à découvrir FinZen</p>
+                </div>
+                
+                <!-- WaitForIt Embed -->
+                <div id="waitforit-embed" data-project-id="62c3e909-0212-4012-b62d-44eeb30fe25f"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WaitForIt Script -->
+    <script type="module" src="https://app.waitforit.me/widget/embed.bundle.js"></script>
+
+    <!-- Modal JavaScript -->
+    <script>
+        function openModal() {
+            const modal = document.getElementById('waitlistModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('waitlistModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('waitlistModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
+
