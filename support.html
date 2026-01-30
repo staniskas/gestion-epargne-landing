@@ -3,275 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - PeekSou | Aide et Assistance</title>
-    <meta name="description" content="Besoin d'aide avec PeekSou ? Consultez notre FAQ, guide d'utilisation et contactez notre équipe de support.">
+    <title>Support - Peeksou | Aide et Assistance</title>
+    <meta name="description" content="Besoin d'aide avec Peeksou ? Consultez notre FAQ, guide d'utilisation et contactez notre équipe de support.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        :root {
+            --app-bg: linear-gradient(180deg, #000 0%, #001D25 70.67%, #00394A 100%);
+            --glass: rgba(0, 57, 74, 0.35);
+            --glass-border: rgba(255, 255, 255, 0.06);
+            --accent-teal: #22C4A0;
+            --accent-orange: #F97316;
+            --text-primary: #FFFFFF;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
         }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 56, 74, 0.1);
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", sans-serif; background: var(--app-bg); background-attachment: fixed; color: var(--text-primary); min-height: 100vh; -webkit-font-smoothing: antialiased; }
+        .glass-card { background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 1.5rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .glass-card:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4); }
+        .glass-header { background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid var(--glass-border); }
+        .btn-app { background: var(--accent-teal); color: #000; font-weight: 600; border-radius: 9999px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .btn-app:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(34, 196, 160, 0.4); }
+        .link-teal { color: var(--accent-teal); }
+        .link-teal:hover { text-decoration: underline; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased">
-    
-    <!-- Header -->
-    <header class="bg-[#00384A] shadow-lg">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <div class="bg-white rounded-full shadow-md flex items-center justify-center overflow-hidden">
-                            <img src="logo.png" alt="PeekSou" class="h-12 sm:h-12 w-auto scale-150">
-                        </div>
-                        <span class="ml-4 text-white font-semibold text-xl">PeekSou</span>
-                    </a>
-                </div>
-                <a href="index.html" class="text-white hover:text-gray-200 transition text-sm sm:text-base">
-                    Retour à l'accueil
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 glass-header">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0">
+                        <img src="logo.png" alt="Peeksou" class="w-full h-full object-contain scale-150">
+                    </div>
+                    <span class="text-white font-semibold text-lg hidden sm:block">Peeksou</span>
                 </a>
+                <nav class="flex items-center gap-4">
+                    <a href="support.html" class="text-white/90 hover:text-white text-sm sm:text-base transition">Support</a>
+                    <a href="index.html" class="text-white/90 hover:text-white text-sm sm:text-base transition">Accueil</a>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-[#00384A] to-[#004d66] py-16 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                    Centre d'assistance PeekSou
-                </h1>
-                <p class="text-xl text-gray-200 leading-relaxed">
-                    Besoin d'aide ? Vous êtes au bon endroit. Trouvez des réponses à vos questions ou contactez notre équipe.
-                </p>
-            </div>
+    <section class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Centre d'assistance Peeksou
+            </h1>
+            <p class="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed">
+                Besoin d'aide ? Vous êtes au bon endroit. Trouvez des réponses à vos questions ou contactez notre équipe.
+            </p>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="py-16 sm:py-24 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-[#00384A] text-center mb-12">
-                    Questions fréquentes
-                </h2>
-                
-                <div class="space-y-6">
-                    <!-- FAQ 1 -->
-                    <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#00384A] mb-3">
-                            Comment créer mes premiers objectifs ?
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Dans l'app, appuyez sur le bouton "+" pour créer un nouvel objectif. Donnez-lui un nom (ex: "Vacances été 2026"), définissez le montant cible et la date d'échéance. Vous pouvez ensuite y allouer de l'argent depuis votre épargne disponible.
-                        </p>
-                    </div>
-
-                    <!-- FAQ 2 -->
-                    <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#00384A] mb-3">
-                            Comment savoir combien j'ai réellement disponible ?
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            L'écran d'accueil affiche clairement trois montants : l'argent disponible (ce que vous pouvez dépenser maintenant), l'argent réservé (alloué à vos objectifs) et l'argent souhaitable (vos objectifs futurs). Le montant disponible est celui que vous pouvez utiliser sans compromettre vos projets.
-                        </p>
-                    </div>
-
-                    <!-- FAQ 3 -->
-                    <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#00384A] mb-3">
-                            Pourquoi PeekSou ne se connecte pas à ma banque ?
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            PeekSou fonctionne 100% manuellement, sans synchronisation bancaire. Cela garantit votre confidentialité et votre sécurité. Vous saisissez vous-même vos revenus et vos dépenses. C'est plus simple, plus rapide et vos données sont sécurisées sur nos serveurs Firebase.
-                        </p>
-                    </div>
-
-                    <!-- FAQ 4 -->
-                    <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#00384A] mb-3">
-                            Puis-je utiliser PeekSou hors ligne ?
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            PeekSou nécessite une connexion internet pour synchroniser vos données avec nos serveurs sécurisés Firebase. Cela vous permet d'accéder à vos données depuis n'importe quel appareil et de ne jamais perdre vos informations.
-                        </p>
-                    </div>
-
-                    <!-- FAQ 5 -->
-                    <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#00384A] mb-3">
-                            Comment modifier ou supprimer un objectif ?
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Appuyez sur l'objectif que vous souhaitez modifier. Vous pouvez alors changer son nom, son montant cible, sa date d'échéance, ou le supprimer. Si vous supprimez un objectif, l'argent qui y était alloué retourne dans votre épargne disponible.
-                        </p>
-                    </div>
-
-                    <!-- FAQ 6 -->
-                    <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#00384A] mb-3">
-                            Mes données sont-elles sécurisées ?
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Absolument. PeekSou stocke vos données de manière sécurisée sur Firebase, une plateforme cloud sécurisée de Google. Aucune synchronisation bancaire n'est effectuée - vous saisissez manuellement vos informations. Vos données sont chiffrées et protégées. Vos informations financières restent privées et sécurisées.
-                        </p>
-                    </div>
-
-                    <!-- FAQ 7 -->
-                    <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#00384A] mb-3">
-                            Comment enregistrer mes revenus et dépenses ?
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Utilisez la section "Transactions" pour enregistrer vos revenus et dépenses. Ajoutez le montant, la date, et éventuellement une note. Ces transactions mettent à jour automatiquement votre épargne disponible.
-                        </p>
-                    </div>
-
-                    <!-- FAQ 8 -->
-                    <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200">
-                        <h3 class="text-xl font-bold text-[#00384A] mb-3">
-                            Puis-je utiliser PeekSou sur plusieurs appareils ?
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Oui ! Grâce à la synchronisation Firebase, vos données sont automatiquement synchronisées entre tous vos appareils. Connectez-vous avec le même compte et accédez à vos finances depuis n'importe quel appareil, en toute sécurité.
-                        </p>
-                    </div>
+    <section class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-10">
+                Questions fréquentes
+            </h2>
+            <div class="space-y-5">
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-lg font-bold text-white mb-3">Comment créer mes premiers objectifs ?</h3>
+                    <p class="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">Dans l'app, appuyez sur le bouton "+" pour créer un nouvel objectif. Donnez-lui un nom (ex: "Vacances été 2026"), définissez le montant cible et la date d'échéance. Vous pouvez ensuite y allouer de l'argent depuis votre épargne disponible.</p>
+                </div>
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-lg font-bold text-white mb-3">Comment savoir combien j'ai réellement disponible ?</h3>
+                    <p class="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">L'écran d'accueil affiche clairement trois montants : l'argent disponible (ce que vous pouvez dépenser maintenant), l'argent réservé (alloué à vos objectifs) et l'argent souhaitable (vos objectifs futurs). Le montant disponible est celui que vous pouvez utiliser sans compromettre vos projets.</p>
+                </div>
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-lg font-bold text-white mb-3">Pourquoi Peeksou ne se connecte pas à ma banque ?</h3>
+                    <p class="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">Peeksou fonctionne 100% manuellement, sans synchronisation bancaire. Cela garantit votre confidentialité et votre sécurité. Vous saisissez vous-même vos revenus et vos dépenses. C'est plus simple, plus rapide et vos données sont sécurisées sur nos serveurs Firebase.</p>
+                </div>
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-lg font-bold text-white mb-3">Puis-je utiliser Peeksou hors ligne ?</h3>
+                    <p class="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">Peeksou nécessite une connexion internet pour synchroniser vos données avec nos serveurs sécurisés Firebase. Cela vous permet d'accéder à vos données depuis n'importe quel appareil et de ne jamais perdre vos informations.</p>
+                </div>
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-lg font-bold text-white mb-3">Comment modifier ou supprimer un objectif ?</h3>
+                    <p class="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">Appuyez sur l'objectif que vous souhaitez modifier. Vous pouvez alors changer son nom, son montant cible, sa date d'échéance, ou le supprimer. Si vous supprimez un objectif, l'argent qui y était alloué retourne dans votre épargne disponible.</p>
+                </div>
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-lg font-bold text-white mb-3">Mes données sont-elles sécurisées ?</h3>
+                    <p class="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">Absolument. Peeksou stocke vos données de manière sécurisée sur Firebase, une plateforme cloud sécurisée de Google. Aucune synchronisation bancaire n'est effectuée - vous saisissez manuellement vos informations. Vos données sont chiffrées et protégées. Vos informations financières restent privées et sécurisées.</p>
+                </div>
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-lg font-bold text-white mb-3">Comment enregistrer mes revenus et dépenses ?</h3>
+                    <p class="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">Utilisez la section "Transactions" pour enregistrer vos revenus et dépenses. Ajoutez le montant, la date, et éventuellement une note. Ces transactions mettent à jour automatiquement votre épargne disponible.</p>
+                </div>
+                <div class="glass-card p-6 sm:p-8">
+                    <h3 class="text-lg font-bold text-white mb-3">Puis-je utiliser Peeksou sur plusieurs appareils ?</h3>
+                    <p class="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base">Oui ! Grâce à la synchronisation Firebase, vos données sont automatiquement synchronisées entre tous vos appareils. Connectez-vous avec le même compte et accédez à vos finances depuis n'importe quel appareil, en toute sécurité.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Guide d'utilisation -->
-    <section class="py-16 sm:py-24 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-[#00384A] text-center mb-12">
-                    Guide de démarrage rapide
-                </h2>
-                
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Étape 1 -->
-                    <div class="card-hover bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
-                        <div class="w-12 h-12 bg-[#709C7A] rounded-full flex items-center justify-center mb-4">
-                            <span class="text-white font-bold text-xl">1</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-[#00384A] mb-2">
-                            Configure ton épargne initiale
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Commence par saisir le montant total de ton épargne actuelle. C'est ton point de départ.
-                        </p>
-                    </div>
-
-                    <!-- Étape 2 -->
-                    <div class="card-hover bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
-                        <div class="w-12 h-12 bg-[#709C7A] rounded-full flex items-center justify-center mb-4">
-                            <span class="text-white font-bold text-xl">2</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-[#00384A] mb-2">
-                            Crée tes objectifs
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Ajoute tes projets : vacances, impôts, matelas de sécurité, investissements... Donne-leur un nom et un montant cible.
-                        </p>
-                    </div>
-
-                    <!-- Étape 3 -->
-                    <div class="card-hover bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
-                        <div class="w-12 h-12 bg-[#709C7A] rounded-full flex items-center justify-center mb-4">
-                            <span class="text-white font-bold text-xl">3</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-[#00384A] mb-2">
-                            Alloue ton argent
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Répartis ton épargne entre tes objectifs. Tu verras immédiatement combien il te reste vraiment disponible.
-                        </p>
-                    </div>
-
-                    <!-- Étape 4 -->
-                    <div class="card-hover bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
-                        <div class="w-12 h-12 bg-[#709C7A] rounded-full flex items-center justify-center mb-4">
-                            <span class="text-white font-bold text-xl">4</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-[#00384A] mb-2">
-                            Suis tes transactions
-                        </h3>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                            Enregistre tes revenus et dépenses pour garder ton épargne à jour. Simple et rapide.
-                        </p>
-                    </div>
+    <section class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-10">
+                Guide de démarrage rapide
+            </h2>
+            <div class="grid sm:grid-cols-2 gap-5">
+                <div class="glass-card p-6">
+                    <div class="w-11 h-11 rounded-2xl bg-[var(--accent-teal)]/20 flex items-center justify-center mb-4 text-white font-bold">1</div>
+                    <h3 class="text-white font-bold mb-2">Configure ton épargne initiale</h3>
+                    <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Commence par saisir le montant total de ton épargne actuelle. C'est ton point de départ.</p>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="w-11 h-11 rounded-2xl bg-[var(--accent-teal)]/20 flex items-center justify-center mb-4 text-white font-bold">2</div>
+                    <h3 class="text-white font-bold mb-2">Crée tes objectifs</h3>
+                    <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Ajoute tes projets : vacances, impôts, matelas de sécurité, investissements... Donne-leur un nom et un montant cible.</p>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="w-11 h-11 rounded-2xl bg-[var(--accent-teal)]/20 flex items-center justify-center mb-4 text-white font-bold">3</div>
+                    <h3 class="text-white font-bold mb-2">Alloue ton argent</h3>
+                    <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Répartis ton épargne entre tes objectifs. Tu verras immédiatement combien il te reste vraiment disponible.</p>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="w-11 h-11 rounded-2xl bg-[var(--accent-teal)]/20 flex items-center justify-center mb-4 text-white font-bold">4</div>
+                    <h3 class="text-white font-bold mb-2">Visualise ton épargne</h3>
+                    <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Consulte en un coup d'œil la répartition de ton épargne et l'avancement de tes objectifs. Simple et clair.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="py-16 sm:py-24 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                <div class="bg-gradient-to-r from-[#00384A] to-[#004d66] p-10 sm:p-16 rounded-3xl text-center">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
-                        Besoin d'aide supplémentaire ?
-                    </h2>
-                    <p class="text-xl text-gray-200 mb-8 leading-relaxed">
-                        Notre équipe est là pour vous aider. Contactez-nous et nous vous répondrons dans les plus brefs délais.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="mailto:contact@peeksou.app" class="bg-[#709C7A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#5a8a65] transition">
-                            contact@peeksou.app
-                        </a>
-                    </div>
-                </div>
+    <section class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="glass-card p-8 sm:p-12 text-center">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Besoin d'aide supplémentaire ?</h2>
+                <p class="text-[var(--text-secondary)] mb-8 leading-relaxed">Notre équipe est là pour vous aider. Contactez-nous et nous vous répondrons dans les plus brefs délais.</p>
+                <a href="mailto:contact@peeksou.com" class="btn-app inline-flex items-center justify-center px-8 py-4 text-lg font-semibold">contact@peeksou.com</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8 mb-8">
-                    <div>
-                        <img src="logo.png" alt="PeekSou" class="h-8 w-auto mb-4 brightness-0 invert opacity-90">
-                        <p class="text-sm leading-relaxed">
-                            Simplificateur de budget long terme. Change de vision pour t'enrichir. Passe tes projets en priorité.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-semibold mb-4">Navigation</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="index.html" class="hover:text-white transition">Accueil</a></li>
-                            <li><a href="commercial.html" class="hover:text-white transition">Informations commerciales</a></li>
-                            <li><a href="support.html" class="hover:text-white transition">Support</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-semibold mb-4">Légal</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="mentions-legales.html" class="hover:text-white transition">Mentions légales</a></li>
-                            <li><a href="politique-confidentialite.html" class="hover:text-white transition">Politique de confidentialité</a></li>
-                            <li><a href="cgu.html" class="hover:text-white transition">CGU</a></li>
-                        </ul>
-                    </div>
+    <footer class="border-t border-[var(--glass-border)] py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-10">
+                <div>
+                    <div class="flex items-center gap-2 mb-4"><img src="logo.png" alt="Peeksou" class="h-8 w-auto brightness-0 invert opacity-90"><span class="text-white font-semibold">Peeksou</span></div>
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Simplificateur de budget long terme. Change de vision. Passe tes projets en priorité.</p>
                 </div>
-                <div class="border-t border-gray-800 pt-8 text-center text-sm">
-                    <p>&copy; 2025 PeekSou. Tous droits réservés.</p>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                        <li><a href="index.html" class="hover:text-white transition">Accueil</a></li>
+                        <li><a href="commercial.html" class="hover:text-white transition">Informations commerciales</a></li>
+                        <li><a href="support.html" class="hover:text-white transition">Support</a></li>
+                    </ul>
                 </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Légal</h4>
+                    <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                        <li><a href="mentions-legales.html" class="hover:text-white transition">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html" class="hover:text-white transition">Politique de confidentialité</a></li>
+                        <li><a href="cgu.html" class="hover:text-white transition">CGU</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-[var(--glass-border)] text-center text-sm text-[var(--text-muted)]">
+                <p>&copy; 2025 Peeksou. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
 </body>
 </html>
-

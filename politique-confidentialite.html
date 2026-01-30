@@ -3,144 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de Confidentialité - PeekSou</title>
-    <meta name="description" content="Consultez la Politique de Confidentialité de PeekSou, l'application de gestion d'épargne simplifiée. Protection de vos données personnelles.">
+    <title>Politique de Confidentialité - Peeksou</title>
+    <meta name="description" content="Consultez la Politique de Confidentialité de Peeksou, l'application de gestion d'épargne simplifiée. Protection de vos données personnelles.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 56, 74, 0.1);
-        }
+        :root { --app-bg: linear-gradient(180deg, #000 0%, #001D25 70.67%, #00394A 100%); --glass: rgba(0, 57, 74, 0.35); --glass-border: rgba(255, 255, 255, 0.06); --accent-teal: #22C4A0; --text-secondary: #94A3B8; --text-muted: #64748B; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", sans-serif; background: var(--app-bg); background-attachment: fixed; color: #fff; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+        .glass-card { background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 1.5rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .glass-card:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4); }
+        .glass-header { background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid var(--glass-border); }
+        .btn-app { background: var(--accent-teal); color: #000; font-weight: 600; border-radius: 9999px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .btn-app:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(34, 196, 160, 0.4); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 antialiased">
-    
-    <!-- Header -->
-    <header class="bg-[#00384A] shadow-lg">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <div class="bg-white rounded-full shadow-md flex items-center justify-center overflow-hidden">
-                            <img src="logo.png" alt="PeekSou" class="h-12 sm:h-12 w-auto scale-150">
-                        </div>
-                        <span class="ml-4 text-white font-semibold text-xl">PeekSou</span>
-                    </a>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a href="support.html" class="text-white hover:text-gray-200 transition text-sm sm:text-base">
-                        Support
-                    </a>
-                    <a href="index.html" class="text-white hover:text-gray-200 transition text-sm sm:text-base">
-                        Accueil
-                    </a>
-                </div>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 glass-header">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0"><img src="logo.png" alt="Peeksou" class="w-full h-full object-contain scale-150"></div>
+                    <span class="text-white font-semibold text-lg hidden sm:block">Peeksou</span>
+                </a>
+                <nav class="flex items-center gap-4">
+                    <a href="support.html" class="text-white/90 hover:text-white text-sm sm:text-base transition">Support</a>
+                    <a href="index.html" class="text-white/90 hover:text-white text-sm sm:text-base transition">Accueil</a>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-[#00384A] to-[#004d66] py-16 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
-                    Politique de Confidentialité
-                </h1>
-                <p class="text-xl text-gray-200 leading-relaxed">
-                    Dernière mise à jour : janvier 2025
-                </p>
-            </div>
+    <section class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">Politique de Confidentialité</h1>
+            <p class="text-lg text-[var(--text-secondary)] leading-relaxed">Dernière mise à jour : janvier 2025</p>
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="py-16 sm:py-24 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                
-                <!-- Introduction -->
+    <section class="py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
                 <div class="mb-12">
-                    <p class="text-gray-700 leading-relaxed mb-6">
-                        PeekSou (ci-après "nous", "notre" ou "l'Éditeur") s'engage à protéger et respecter votre vie privée. La présente Politique de Confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos données personnelles lorsque vous utilisez l'application mobile PeekSou (ci-après l'"Application").
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-6">
+                        Peeksou (ci-après "nous", "notre" ou "l'Éditeur") s'engage à protéger et respecter votre vie privée. La présente Politique de Confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos données personnelles lorsque vous utilisez l'application mobile Peeksou (ci-après l'"Application").
                     </p>
-                    <p class="text-gray-700 leading-relaxed">
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
                         En utilisant l'Application, vous acceptez les pratiques décrites dans cette politique. Si vous n'acceptez pas cette politique, veuillez ne pas utiliser l'Application.
                     </p>
                 </div>
 
-                <!-- Article 1 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
-                        1. Responsable du traitement
-                    </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Le responsable du traitement des données personnelles est :
-                    </p>
-                    <div class="bg-white p-4 rounded-lg border border-gray-200 mb-4">
-                        <p class="text-gray-700">
-                            <strong>PeekSou</strong><br>
-                            Email : <a href="mailto:contact@peeksou.app" class="text-[#709C7A] hover:underline">contact@peeksou.app</a>
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">1. Responsable du traitement</h2>
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">Le responsable du traitement des données personnelles est :</p>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4 mb-4">
+                        <p class="text-[var(--text-secondary)]">
+                            <strong class="text-white">Peeksou</strong><br>
+                            Email : <a href="mailto:contact@peeksou.com" class="text-[var(--accent-teal)] hover:underline">contact@peeksou.com</a>
                         </p>
                     </div>
-                    <p class="text-gray-700 leading-relaxed">
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
                         Pour toute question concernant le traitement de vos données personnelles, vous pouvez nous contacter à l'adresse ci-dessus.
                     </p>
                 </div>
 
                 <!-- Article 2 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         2. Données collectées
                     </h2>
-                    <h3 class="text-xl font-semibold text-[#00384A] mb-3 mt-4">
+                    <h3 class="text-lg font-semibold text-white mb-3 mt-4">
                         2.1. Données collectées automatiquement
                     </h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Lors de l'utilisation de l'Application, nous collectons automatiquement certaines données techniques :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li>Identifiant unique de l'appareil</li>
                         <li>Type d'appareil et système d'exploitation</li>
                         <li>Version de l'Application</li>
                         <li>Données de connexion (adresse IP, horodatage)</li>
                         <li>Données d'utilisation de l'Application (fonctionnalités utilisées, fréquence d'utilisation)</li>
                     </ul>
-                    <h3 class="text-xl font-semibold text-[#00384A] mb-3 mt-4">
+                    <h3 class="text-lg font-semibold text-white mb-3 mt-4">
                         2.2. Données fournies par l'utilisateur
                     </h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Lors de la création de votre compte et de l'utilisation de l'Application, vous nous fournissez :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li>Adresse email (pour la création du compte et l'authentification)</li>
                         <li>Données financières saisies manuellement (montants d'épargne, objectifs, transactions)</li>
                         <li>Informations relatives à vos objectifs d'épargne (noms, montants cibles, dates d'échéance)</li>
                         <li>Toute autre information que vous choisissez de saisir dans l'Application</li>
                     </ul>
-                    <p class="text-gray-700 leading-relaxed">
-                        <strong>Important :</strong> PeekSou ne collecte aucune donnée bancaire via synchronisation. Toutes les données financières sont saisies manuellement par l'utilisateur.
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
+                        <strong>Important :</strong> Peeksou ne collecte aucune donnée bancaire via synchronisation. Toutes les données financières sont saisies manuellement par l'utilisateur.
                     </p>
                 </div>
 
                 <!-- Article 3 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         3. Finalités du traitement
                     </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Nous utilisons vos données personnelles aux fins suivantes :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li><strong>Fourniture du Service :</strong> Permettre l'utilisation de l'Application, la création et la gestion de votre compte, la synchronisation de vos données entre vos appareils</li>
                         <li><strong>Amélioration du Service :</strong> Analyser l'utilisation de l'Application pour améliorer les fonctionnalités et l'expérience utilisateur</li>
                         <li><strong>Support client :</strong> Répondre à vos demandes et vous assister en cas de problème</li>
@@ -151,14 +119,14 @@
                 </div>
 
                 <!-- Article 4 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         4. Base légale du traitement
                     </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Conformément au Règlement Général sur la Protection des Données (RGPD), nous traitons vos données personnelles sur les bases légales suivantes :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li><strong>Exécution d'un contrat :</strong> Le traitement est nécessaire pour fournir le Service et exécuter les Conditions Générales d'Utilisation</li>
                         <li><strong>Consentement :</strong> Pour certaines communications marketing (vous pouvez retirer votre consentement à tout moment)</li>
                         <li><strong>Intérêt légitime :</strong> Pour améliorer le Service, assurer sa sécurité et prévenir les fraudes</li>
@@ -167,94 +135,94 @@
                 </div>
 
                 <!-- Article 5 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         5. Conservation des données
                     </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Nous conservons vos données personnelles uniquement pendant la durée nécessaire aux finalités pour lesquelles elles ont été collectées :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li><strong>Données de compte :</strong> Pendant toute la durée d'utilisation de l'Application et jusqu'à 3 ans après la suppression de votre compte</li>
                         <li><strong>Données financières :</strong> Pendant toute la durée d'utilisation de l'Application et jusqu'à 3 ans après la suppression de votre compte (conformément aux obligations comptables et fiscales)</li>
                         <li><strong>Données techniques :</strong> Pendant une durée maximale de 2 ans à des fins d'analyse et d'amélioration du Service</li>
                         <li><strong>Données de connexion :</strong> Pendant une durée maximale de 12 mois à des fins de sécurité</li>
                     </ul>
-                    <p class="text-gray-700 leading-relaxed">
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
                         Au-delà de ces durées, vos données sont supprimées ou anonymisées de manière irréversible, sauf obligation légale de conservation plus longue.
                     </p>
                 </div>
 
                 <!-- Article 6 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         6. Partage des données
                     </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Nous ne vendons, ne louons ni ne partageons vos données personnelles avec des tiers à des fins commerciales. Nous pouvons partager vos données uniquement dans les cas suivants :
                     </p>
-                    <h3 class="text-xl font-semibold text-[#00384A] mb-3 mt-4">
+                    <h3 class="text-lg font-semibold text-white mb-3 mt-4">
                         6.1. Prestataires de services
                     </h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Nous pouvons partager vos données avec des prestataires de services tiers qui nous aident à exploiter l'Application :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li><strong>Firebase (Google) :</strong> Hébergement et stockage sécurisé de vos données, authentification, synchronisation</li>
                         <li><strong>Services d'analyse :</strong> Pour analyser l'utilisation de l'Application (données anonymisées)</li>
                     </ul>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Ces prestataires sont soumis à des obligations strictes de confidentialité et ne peuvent utiliser vos données que pour fournir les services demandés.
                     </p>
-                    <h3 class="text-xl font-semibold text-[#00384A] mb-3 mt-4">
+                    <h3 class="text-lg font-semibold text-white mb-3 mt-4">
                         6.2. Obligations légales
                     </h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Nous pouvons divulguer vos données si la loi l'exige ou si nous pensons de bonne foi qu'une telle divulgation est nécessaire pour :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li>Répondre à une demande judiciaire, une assignation ou une procédure judiciaire</li>
                         <li>Protéger nos droits, notre propriété ou notre sécurité</li>
                         <li>Protéger les droits, la propriété ou la sécurité de nos utilisateurs ou de tiers</li>
                         <li>Prévenir ou enquêter sur une fraude ou une activité illégale</li>
                     </ul>
-                    <h3 class="text-xl font-semibold text-[#00384A] mb-3 mt-4">
+                    <h3 class="text-lg font-semibold text-white mb-3 mt-4">
                         6.3. Transferts internationaux
                     </h3>
-                    <p class="text-gray-700 leading-relaxed">
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
                         Vos données peuvent être stockées et traitées dans des pays situés en dehors de l'Espace Économique Européen (EEE), notamment aux États-Unis (via Firebase/Google). Ces transferts sont encadrés par des garanties appropriées conformes au RGPD, notamment les Clauses Contractuelles Types de la Commission Européenne.
                     </p>
                 </div>
 
                 <!-- Article 7 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         7. Sécurité des données
                     </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre la perte, l'utilisation abusive, l'accès non autorisé, la divulgation, l'altération ou la destruction :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li><strong>Chiffrement :</strong> Vos données sont chiffrées en transit (HTTPS/TLS) et au repos</li>
                         <li><strong>Authentification sécurisée :</strong> Utilisation de Firebase Authentication pour sécuriser l'accès à votre compte</li>
                         <li><strong>Contrôle d'accès :</strong> Accès restreint aux données personnelles aux seules personnes autorisées</li>
                         <li><strong>Surveillance :</strong> Surveillance continue de nos systèmes pour détecter les vulnérabilités et les intrusions</li>
                         <li><strong>Sauvegardes :</strong> Sauvegardes régulières et sécurisées de vos données</li>
                     </ul>
-                    <p class="text-gray-700 leading-relaxed">
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
                         Malgré ces mesures, aucun système n'est totalement sécurisé. Nous ne pouvons garantir une sécurité absolue de vos données. Vous êtes responsable de la confidentialité de vos identifiants de connexion.
                     </p>
                 </div>
 
                 <!-- Article 8 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         8. Vos droits
                     </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Conformément au RGPD, vous disposez des droits suivants concernant vos données personnelles :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li><strong>Droit d'accès :</strong> Vous pouvez obtenir une copie de vos données personnelles que nous détenons</li>
                         <li><strong>Droit de rectification :</strong> Vous pouvez corriger vos données personnelles inexactes ou incomplètes</li>
                         <li><strong>Droit à l'effacement :</strong> Vous pouvez demander la suppression de vos données personnelles dans certains cas (droit à l'oubli)</li>
@@ -264,123 +232,106 @@
                         <li><strong>Droit de retirer votre consentement :</strong> Lorsque le traitement est basé sur votre consentement, vous pouvez le retirer à tout moment</li>
                         <li><strong>Droit de définir des directives post-mortem :</strong> Vous pouvez définir des directives concernant le sort de vos données après votre décès</li>
                     </ul>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Pour exercer ces droits, vous pouvez :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
-                        <li>Nous contacter par email à : <a href="mailto:contact@peeksou.app" class="text-[#709C7A] hover:underline">contact@peeksou.app</a></li>
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
+                        <li>Nous contacter par email à : <a href="mailto:contact@peeksou.com" class="text-[var(--accent-teal)] hover:underline">contact@peeksou.com</a></li>
                         <li>Supprimer votre compte directement depuis l'Application (paramètres)</li>
                     </ul>
-                    <p class="text-gray-700 leading-relaxed">
-                        Nous répondrons à votre demande dans un délai d'un mois. Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-[#709C7A] hover:underline">www.cnil.fr</a>.
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
+                        Nous répondrons à votre demande dans un délai d'un mois. Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-[var(--accent-teal)] hover:underline">www.cnil.fr</a>.
                     </p>
                 </div>
 
                 <!-- Article 9 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         9. Cookies et technologies similaires
                     </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        L'Application mobile PeekSou n'utilise pas de cookies au sens traditionnel. Cependant, nous utilisons des technologies similaires pour :
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
+                        L'Application mobile Peeksou n'utilise pas de cookies au sens traditionnel. Cependant, nous utilisons des technologies similaires pour :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li>Mémoriser vos préférences de connexion</li>
                         <li>Assurer la synchronisation de vos données entre appareils</li>
                         <li>Améliorer les performances de l'Application</li>
                     </ul>
-                    <p class="text-gray-700 leading-relaxed">
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
                         Ces données sont stockées localement sur votre appareil et sur nos serveurs sécurisés. Vous pouvez supprimer ces données en désinstallant l'Application ou en supprimant votre compte.
                     </p>
                 </div>
 
                 <!-- Article 10 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         10. Données des mineurs
                     </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         L'Application est destinée aux personnes majeures ou aux mineurs émancipés. Nous ne collectons pas sciemment de données personnelles de mineurs non émancipés.
                     </p>
-                    <p class="text-gray-700 leading-relaxed">
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
                         Si nous apprenons que nous avons collecté des données personnelles d'un mineur non émancipé sans le consentement parental, nous prendrons des mesures pour supprimer ces informations dans les plus brefs délais. Si vous êtes parent ou tuteur et que vous pensez que votre enfant nous a fourni des données personnelles, veuillez nous contacter.
                     </p>
                 </div>
 
                 <!-- Article 11 -->
-                <div class="card-hover bg-gray-50 p-6 sm:p-8 rounded-2xl border border-gray-200 mb-6">
-                    <h2 class="text-2xl font-bold text-[#00384A] mb-4">
+                <div class="glass-card p-6 sm:p-8 mb-6">
+                    <h2 class="text-xl font-bold text-white mb-4">
                         11. Modifications de la politique de confidentialité
                     </h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         Nous pouvons modifier cette Politique de Confidentialité à tout moment pour refléter les changements dans nos pratiques ou pour d'autres raisons opérationnelles, légales ou réglementaires.
                     </p>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+                    <p class="text-[var(--text-secondary)] leading-relaxed mb-4">
                         En cas de modification substantielle, nous vous en informerons par :
                     </p>
-                    <ul class="list-disc list-inside text-gray-700 leading-relaxed space-y-2 ml-4 mb-4">
+                    <ul class="list-disc list-inside text-[var(--text-secondary)] leading-relaxed space-y-2 ml-4 mb-4">
                         <li>Une notification dans l'Application</li>
                         <li>Un email à l'adresse associée à votre compte</li>
                         <li>La mise à jour de la date "Dernière mise à jour" en haut de cette page</li>
                     </ul>
-                    <p class="text-gray-700 leading-relaxed">
+                    <p class="text-[var(--text-secondary)] leading-relaxed">
                         Nous vous encourageons à consulter régulièrement cette page pour rester informé de la manière dont nous protégeons vos données. Votre utilisation continue de l'Application après la publication des modifications constitue votre acceptation de la politique révisée.
                     </p>
                 </div>
 
-                <!-- Contact -->
-                <div class="bg-gradient-to-r from-[#00384A] to-[#004d66] p-8 sm:p-12 rounded-3xl text-center mt-12">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
-                        Questions sur la protection de vos données ?
-                    </h2>
-                    <p class="text-gray-200 mb-6">
-                        Pour toute question concernant cette Politique de Confidentialité ou l'exercice de vos droits, contactez-nous :
-                    </p>
-                    <a href="mailto:contact@peeksou.app" class="bg-[#709C7A] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#5a8a65] transition inline-block">
-                        contact@peeksou.app
-                    </a>
-                    <p class="text-gray-300 text-sm mt-6">
-                        Vous pouvez également introduire une réclamation auprès de la CNIL :<br>
-                        <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">www.cnil.fr</a>
-                    </p>
+                <div class="glass-card p-8 sm:p-12 text-center mt-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Questions sur la protection de vos données ?</h2>
+                    <p class="text-[var(--text-secondary)] mb-6">Pour toute question concernant cette Politique de Confidentialité ou l'exercice de vos droits, contactez-nous :</p>
+                    <a href="mailto:contact@peeksou.com" class="btn-app inline-flex items-center justify-center px-8 py-4 text-lg font-semibold">contact@peeksou.com</a>
+                    <p class="text-[var(--text-muted)] text-sm mt-6">Vous pouvez également introduire une réclamation auprès de la CNIL :<br><a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-[var(--accent-teal)] underline hover:no-underline">www.cnil.fr</a></p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8 mb-8">
-                    <div>
-                        <img src="logo.png" alt="PeekSou" class="h-8 w-auto mb-4 brightness-0 invert opacity-90">
-                        <p class="text-sm leading-relaxed">
-                            Simplificateur de budget long terme. Change de vision pour t'enrichir. Passe tes projets en priorité.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-semibold mb-4">Navigation</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="index.html" class="hover:text-white transition">Accueil</a></li>
-                            <li><a href="commercial.html" class="hover:text-white transition">Informations commerciales</a></li>
-                            <li><a href="support.html" class="hover:text-white transition">Support</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-semibold mb-4">Légal</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="mentions-legales.html" class="hover:text-white transition">Mentions légales</a></li>
-                            <li><a href="politique-confidentialite.html" class="hover:text-white transition">Politique de confidentialité</a></li>
-                            <li><a href="cgu.html" class="hover:text-white transition">CGU</a></li>
-                        </ul>
-                    </div>
+    <footer class="border-t border-[var(--glass-border)] py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-10">
+                <div>
+                    <div class="flex items-center gap-2 mb-4"><img src="logo.png" alt="Peeksou" class="h-8 w-auto brightness-0 invert opacity-90"><span class="text-white font-semibold">Peeksou</span></div>
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Simplificateur de budget long terme. Change de vision. Passe tes projets en priorité.</p>
                 </div>
-                <div class="border-t border-gray-800 pt-8 text-center text-sm">
-                    <p>&copy; 2025 PeekSou. Tous droits réservés.</p>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                        <li><a href="index.html" class="hover:text-white transition">Accueil</a></li>
+                        <li><a href="commercial.html" class="hover:text-white transition">Informations commerciales</a></li>
+                        <li><a href="support.html" class="hover:text-white transition">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Légal</h4>
+                    <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                        <li><a href="mentions-legales.html" class="hover:text-white transition">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html" class="hover:text-white transition">Politique de confidentialité</a></li>
+                        <li><a href="cgu.html" class="hover:text-white transition">CGU</a></li>
+                    </ul>
                 </div>
             </div>
+            <div class="pt-8 border-t border-[var(--glass-border)] text-center text-sm text-[var(--text-muted)]"><p>&copy; 2025 Peeksou. Tous droits réservés.</p></div>
         </div>
     </footer>
 

@@ -3,164 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeekSou - Informations Commerciales | Gestion d'épargne simplifiée</title>
-    <meta name="description" content="Découvrez PeekSou : l'application qui simplifie la gestion de votre épargne. Planifiez vos projets, visualisez votre argent disponible, pilotez vos finances sans stress.">
+    <title>Peeksou - Informations Commerciales | Gestion d'épargne simplifiée</title>
+    <meta name="description" content="Découvrez Peeksou : l'application qui simplifie la gestion de votre épargne. Planifiez vos projets, visualisez votre argent disponible, pilotez vos finances sans stress.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(0, 56, 74, 0.1), 0 10px 10px -5px rgba(0, 56, 74, 0.04);
-        }
-        
-        .btn-primary {
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(112, 156, 122, 0.3);
-        }
+        :root { --app-bg: linear-gradient(180deg, #000 0%, #001D25 70.67%, #00394A 100%); --glass: rgba(0, 57, 74, 0.35); --glass-border: rgba(255, 255, 255, 0.06); --accent-teal: #22C4A0; --accent-orange: #F97316; --text-secondary: #94A3B8; --text-muted: #64748B; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", sans-serif; background: var(--app-bg); background-attachment: fixed; color: #fff; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+        .glass-card { background: var(--glass); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 1.5rem; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .glass-card:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.4); }
+        .glass-header { background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid var(--glass-border); }
+        .btn-app { background: var(--accent-teal); color: #000; font-weight: 600; border-radius: 9999px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .btn-app:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(34, 196, 160, 0.4); }
     </style>
 </head>
-<body class="bg-white text-gray-900 antialiased">
-    
-    <!-- Header -->
-    <header class="bg-[#00384A] shadow-lg">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <div class="bg-white rounded-full shadow-md flex items-center justify-center overflow-hidden">
-                            <img src="logo.png" alt="PeekSou" class="h-12 sm:h-12 w-auto scale-150">
-                        </div>
-                        <span class="ml-4 text-white font-semibold text-xl">PeekSou</span>
-                    </a>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a href="support.html" class="text-white hover:text-gray-200 transition text-sm sm:text-base">
-                        Support
-                    </a>
-                    <a href="index.html" class="text-white hover:text-gray-200 transition text-sm sm:text-base">
-                        Accueil
-                    </a>
-                </div>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 glass-header">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center overflow-hidden flex-shrink-0"><img src="logo.png" alt="Peeksou" class="w-full h-full object-contain scale-150"></div>
+                    <span class="text-white font-semibold text-lg hidden sm:block">Peeksou</span>
+                </a>
+                <nav class="flex items-center gap-4">
+                    <a href="support.html" class="text-white/90 hover:text-white text-sm sm:text-base transition">Support</a>
+                    <a href="index.html" class="text-white/90 hover:text-white text-sm sm:text-base transition">Accueil</a>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-b from-white to-gray-50 py-16 sm:py-24 lg:py-32">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center max-w-4xl mx-auto">
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#00384A] leading-tight mb-6">
-                        PeekSou<br>
-                        <span class="text-[#709C7A]">Simplificateur de budget long terme</span>
-                    </h1>
-                    <p class="text-xl sm:text-2xl text-gray-700 mb-8 leading-relaxed">
-                        Pas une app de suivi budgétaire. Un plan d'avenir.
-                    </p>
-                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        L'app qui va propulser tes projets, t'aider à savoir combien tu as réellement d'argent disponible et comment piloter ton épargne en un coup d'œil.
-                    </p>
-                </div>
-            </div>
+    <section class="py-12 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
+                Peeksou<br>
+                <span class="text-[var(--accent-teal)]">Simplificateur de budget long terme</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-[var(--text-secondary)] mb-6 leading-relaxed">Pas une app de suivi budgétaire. Un plan d'avenir.</p>
+            <p class="text-lg text-[var(--text-secondary)] leading-relaxed">L'app qui va propulser tes projets, t'aider à savoir combien tu as réellement d'argent disponible et comment piloter ton épargne en un coup d'œil.</p>
         </div>
     </section>
 
-    <!-- Fonctionnalités Principales -->
-    <section class="py-20 sm:py-28 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-[#00384A] text-center mb-16">
-                    Fonctionnalités principales
-                </h2>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Fonctionnalité 1 -->
-                    <div class="card-hover bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <div class="w-14 h-14 bg-[#709C7A] rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-white text-2xl">🎯</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#00384A] mb-4">
-                            Gestion d'objectifs
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
+    <section class="py-12 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-12">Fonctionnalités principales</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="glass-card p-6 sm:p-8">
+                        <div class="w-12 h-12 bg-[var(--accent-teal)]/20 rounded-xl flex items-center justify-center mb-5 text-xl">🎯</div>
+                        <h3 class="text-lg font-bold text-white mb-3">Gestion d'objectifs</h3>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
                             Créez et suivez tous vos projets : vacances, impôts, matelas de sécurité, investissements, création d'entreprise... Organisez vos priorités financières en un seul endroit.
                         </p>
                     </div>
 
-                    <!-- Fonctionnalité 2 -->
-                    <div class="card-hover bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <div class="w-14 h-14 bg-[#709C7A] rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-white text-2xl">👁️</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#00384A] mb-4">
-                            Vision claire de votre argent
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
+                    <div class="glass-card p-6 sm:p-8">
+                        <div class="w-12 h-12 bg-[var(--accent-teal)]/20 rounded-xl flex items-center justify-center mb-5 text-xl">👁️</div>
+                        <h3 class="text-lg font-bold text-white mb-3">Vision claire de votre argent</h3>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
                             Distinguez instantanément ce qui est disponible, réservé pour vos projets, ou souhaitable. Plus jamais de doute sur ce que vous pouvez vraiment dépenser.
                         </p>
                     </div>
 
-                    <!-- Fonctionnalité 3 -->
-                    <div class="card-hover bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <div class="w-14 h-14 bg-[#709C7A] rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-white text-2xl">🔒</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#00384A] mb-4">
-                            100% privé et sécurisé
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
+                    <div class="glass-card p-6 sm:p-8">
+                        <div class="w-12 h-12 bg-[var(--accent-teal)]/20 rounded-xl flex items-center justify-center mb-5 text-xl">🔒</div>
+                        <h3 class="text-lg font-bold text-white mb-3">100% privé et sécurisé</h3>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
                             Aucune synchronisation bancaire. Aucune donnée partagée. Vos informations financières restent sur votre téléphone, sous votre contrôle total.
                         </p>
                     </div>
 
-                    <!-- Fonctionnalité 4 -->
-                    <div class="card-hover bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <div class="w-14 h-14 bg-[#709C7A] rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-white text-2xl">📱</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#00384A] mb-4">
-                            Interface intuitive
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
+                    <div class="glass-card p-6 sm:p-8">
+                        <div class="w-12 h-12 bg-[var(--accent-teal)]/20 rounded-xl flex items-center justify-center mb-5 text-xl">📱</div>
+                        <h3 class="text-lg font-bold text-white mb-3">Interface intuitive</h3>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
                             Une application simple et épurée, conçue pour être utilisée au quotidien. Toutes les informations importantes en un coup d'œil.
                         </p>
                     </div>
 
-                    <!-- Fonctionnalité 5 -->
-                    <div class="card-hover bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <div class="w-14 h-14 bg-[#709C7A] rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-white text-2xl">⚡</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#00384A] mb-4">
-                            Synchronisation multi-appareils
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
+                    <div class="glass-card p-6 sm:p-8">
+                        <div class="w-12 h-12 bg-[var(--accent-teal)]/20 rounded-xl flex items-center justify-center mb-5 text-xl">⚡</div>
+                        <h3 class="text-lg font-bold text-white mb-3">Synchronisation multi-appareils</h3>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
                             Accédez à vos finances depuis n'importe quel appareil. Vos données sont synchronisées de manière sécurisée via Firebase. Une application native performante et rapide.
                         </p>
                     </div>
 
-                    <!-- Fonctionnalité 6 -->
-                    <div class="card-hover bg-gray-50 p-8 rounded-2xl border border-gray-200">
-                        <div class="w-14 h-14 bg-[#709C7A] rounded-xl flex items-center justify-center mb-6">
-                            <span class="text-white text-2xl">📊</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#00384A] mb-4">
-                            Suivi de transactions
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
+                    <div class="glass-card p-6 sm:p-8">
+                        <div class="w-12 h-12 bg-[var(--accent-teal)]/20 rounded-xl flex items-center justify-center mb-5 text-xl">📊</div>
+                        <h3 class="text-lg font-bold text-white mb-3">Suivi de transactions</h3>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">
                             Enregistrez facilement vos revenus et dépenses. Gardez votre épargne à jour sans complexité, sans catégorisation fastidieuse.
                         </p>
                     </div>
@@ -169,188 +100,106 @@
         </div>
     </section>
 
-    <!-- Avantages et Différenciation -->
-    <section class="py-20 sm:py-28 bg-gray-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-[#00384A] text-center mb-16">
-                    Pourquoi choisir PeekSou ?
-                </h2>
-                
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <!-- Avantage 1 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
-                        <h3 class="text-2xl font-bold text-[#00384A] mb-4">
-                            Orientation projets, pas dépenses
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            PeekSou change votre façon de penser. Au lieu de vous concentrer sur ce qui part, vous vous concentrez sur ce qui est organisé et placé pour vos projets. C'est la différence entre subir et planifier.
-                        </p>
-                        <p class="text-gray-600 leading-relaxed">
-                            Passez vos projets en priorité et simplifiez votre vision financière.
-                        </p>
+    <section class="py-12 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-12">Pourquoi choisir Peeksou ?</h2>
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                    <div class="glass-card p-6 sm:p-8">
+                        <h3 class="text-xl font-bold text-white mb-4">Orientation projets, pas dépenses</h3>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed mb-4">Peeksou change votre façon de penser. Au lieu de vous concentrer sur ce qui part, vous vous concentrez sur ce qui est organisé et placé pour vos projets. C'est la différence entre subir et planifier.</p>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Passez vos projets en priorité et simplifiez votre vision financière.</p>
                     </div>
-
-                    <!-- Avantage 2 -->
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
-                        <h3 class="text-2xl font-bold text-[#00384A] mb-4">
-                            Simplicité avant tout
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Fini les tableaux Excel rébarbatifs, les catégorisations interminables, les synchronisations bancaires qui ne fonctionnent pas. PeekSou est conçu pour être simple, rapide et efficace.
-                        </p>
-                        <p class="text-gray-600 leading-relaxed">
-                            Une seule app, une seule vue, une seule vérité sur votre argent.
-                        </p>
+                    <div class="glass-card p-6 sm:p-8">
+                        <h3 class="text-xl font-bold text-white mb-4">Simplicité avant tout</h3>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed mb-4">Fini les tableaux Excel rébarbatifs, les catégorisations interminables, les synchronisations bancaires qui ne fonctionnent pas. Peeksou est conçu pour être simple, rapide et efficace.</p>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Une seule app, une seule vue, une seule vérité sur votre argent.</p>
                     </div>
-                </div>
-
-                <!-- Points de différenciation -->
-                <div class="bg-gradient-to-r from-[#00384A] to-[#004d66] p-10 sm:p-16 rounded-3xl">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-white text-center mb-10">
-                        Ce qui nous différencie
-                    </h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-[#709C7A] rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-white text-2xl">🚫</span>
-                            </div>
-                            <h4 class="text-white font-bold mb-2">Pas de synchronisation bancaire</h4>
-                            <p class="text-gray-300 text-sm">Vos données restent privées et sécurisées</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-[#709C7A] rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-white text-2xl">✅</span>
-                            </div>
-                            <h4 class="text-white font-bold mb-2">Orientation réussite</h4>
-                            <p class="text-gray-300 text-sm">Focus sur vos projets, pas sur vos dépenses</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-[#709C7A] rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span class="text-white text-2xl">⚡</span>
-                            </div>
-                            <h4 class="text-white font-bold mb-2">Simplicité maximale</h4>
-                            <p class="text-gray-300 text-sm">Interface épurée, utilisation intuitive</p>
-                        </div>
+            </div>
+            <div class="glass-card p-8 sm:p-12">
+                <h3 class="text-xl sm:text-2xl font-bold text-white text-center mb-8">Ce qui nous différencie</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-[var(--accent-teal)]/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">🚫</div>
+                        <h4 class="text-white font-bold mb-2">Pas de synchronisation bancaire</h4>
+                        <p class="text-[var(--text-secondary)] text-sm">Vos données restent privées et sécurisées</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-[var(--accent-teal)]/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">✅</div>
+                        <h4 class="text-white font-bold mb-2">Orientation réussite</h4>
+                        <p class="text-[var(--text-secondary)] text-sm">Focus sur vos projets, pas sur vos dépenses</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 bg-[var(--accent-teal)]/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl">⚡</div>
+                        <h4 class="text-white font-bold mb-2">Simplicité maximale</h4>
+                        <p class="text-[var(--text-secondary)] text-sm">Interface épurée, utilisation intuitive</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pour qui ? -->
-    <section class="py-20 sm:py-28 bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-[#00384A] text-center mb-16">
-                    Pour qui est PeekSou ?
-                </h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Persona 1 -->
-                    <div class="card-hover bg-gradient-to-br from-[#709C7A] to-[#5a8a65] p-6 rounded-2xl text-white">
-                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                            <span class="text-2xl">💼</span>
-                        </div>
-                        <h4 class="text-lg font-bold mb-2">Freelances</h4>
-                        <p class="text-white/90 text-sm leading-relaxed">
-                            Gérez vos revenus irréguliers et préparez-vous aux périodes creuses avec sérénité.
-                        </p>
+    <section class="py-12 sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white text-center mb-12">Pour qui est Peeksou ?</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="glass-card p-6 border-[var(--accent-teal)]/20">
+                        <div class="w-11 h-11 bg-[var(--accent-teal)]/20 rounded-2xl flex items-center justify-center mb-4 text-xl">💼</div>
+                        <h4 class="text-white font-bold mb-2">Freelances</h4>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Gérez vos revenus irréguliers et préparez-vous aux périodes creuses avec sérénité.</p>
                     </div>
-                    
-                    <!-- Persona 2 -->
-                    <div class="card-hover bg-gradient-to-br from-[#00384A] to-[#004d66] p-6 rounded-2xl text-white">
-                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                            <span class="text-2xl">🚀</span>
-                        </div>
-                        <h4 class="text-lg font-bold mb-2">Jeunes actifs</h4>
-                        <p class="text-white/90 text-sm leading-relaxed">
-                            Prenez le contrôle de vos finances dès le début de votre carrière.
-                        </p>
+                    <div class="glass-card p-6 border-[var(--accent-orange)]/20">
+                        <div class="w-11 h-11 bg-[var(--accent-orange)]/20 rounded-2xl flex items-center justify-center mb-4 text-xl">🚀</div>
+                        <h4 class="text-white font-bold mb-2">Jeunes actifs</h4>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Prenez le contrôle de vos finances dès le début de votre carrière.</p>
                     </div>
-                    
-                    <!-- Persona 3 -->
-                    <div class="card-hover bg-gradient-to-br from-[#709C7A] to-[#5a8a65] p-6 rounded-2xl text-white">
-                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                            <span class="text-2xl">👫</span>
-                        </div>
-                        <h4 class="text-lg font-bold mb-2">Couples</h4>
-                        <p class="text-white/90 text-sm leading-relaxed">
-                            Visualisez ensemble votre épargne commune et vos objectifs partagés.
-                        </p>
+                    <div class="glass-card p-6 border-[var(--accent-teal)]/20">
+                        <div class="w-11 h-11 bg-[var(--accent-teal)]/20 rounded-2xl flex items-center justify-center mb-4 text-xl">👫</div>
+                        <h4 class="text-white font-bold mb-2">Couples</h4>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Visualisez ensemble votre épargne commune et vos objectifs partagés.</p>
                     </div>
-                    
-                    <!-- Persona 4 -->
-                    <div class="card-hover bg-gradient-to-br from-[#00384A] to-[#004d66] p-6 rounded-2xl text-white">
-                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-4">
-                            <span class="text-2xl">👨‍👩‍👧</span>
-                        </div>
-                        <h4 class="text-lg font-bold mb-2">Parents</h4>
-                        <p class="text-white/90 text-sm leading-relaxed">
-                            Préparez l'avenir de vos enfants, que vous soyez team livret A, assurance vie, crypto ou empire immobilier.
-                        </p>
+                    <div class="glass-card p-6 border-[var(--accent-orange)]/20">
+                        <div class="w-11 h-11 bg-[var(--accent-orange)]/20 rounded-2xl flex items-center justify-center mb-4 text-xl">👨‍👩‍👧</div>
+                        <h4 class="text-white font-bold mb-2">Parents</h4>
+                        <p class="text-[var(--text-secondary)] text-sm leading-relaxed">Préparez l'avenir de vos enfants, que vous soyez team livret A, assurance vie, crypto ou empire immobilier.</p>
                     </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-20 sm:py-32 bg-[#00384A]">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl sm:text-5xl font-bold text-white mb-8 leading-tight">
-                    Prêt à propulser tes projets ?
-                </h2>
-                <p class="text-xl text-gray-200 mb-10 leading-relaxed">
-                    Téléchargez PeekSou et commencez à simplifier votre vision financière dès aujourd'hui.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#" class="btn-primary bg-[#709C7A] text-white px-10 py-5 rounded-lg font-bold text-lg sm:text-xl shadow-xl inline-block">
-                        Télécharger sur l'App Store
-                    </a>
-                    <a href="#" class="btn-primary bg-[#709C7A] text-white px-10 py-5 rounded-lg font-bold text-lg sm:text-xl shadow-xl inline-block">
-                        Télécharger sur Google Play
-                    </a>
-                </div>
-                <p class="text-sm text-gray-300 mt-6">
-                    Disponible sur iOS et Android
-                </p>
-            </div>
+    <section class="py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Prêt à propulser tes projets ?</h2>
+            <p class="text-lg sm:text-xl text-[var(--text-secondary)] mb-10 leading-relaxed">Téléchargez Peeksou et commencez à simplifier votre vision financière dès aujourd'hui.</p>
+            <a href="https://apps.apple.com/app/peeksou/idREMPLACER" target="_blank" rel="noopener noreferrer" class="btn-app inline-flex items-center justify-center px-10 py-5 text-lg sm:text-xl font-bold">Télécharger sur l'App Store</a>
+            <p class="text-sm text-[var(--text-muted)] mt-6">Disponible sur iPhone et iPad</p>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-3 gap-8 mb-8">
-                    <div>
-                        <img src="logo.png" alt="PeekSou" class="h-8 w-auto mb-4 brightness-0 invert opacity-90">
-                        <p class="text-sm leading-relaxed">
-                            Simplificateur de budget long terme. Change de vision pour t'enrichir. Passe tes projets en priorité.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-semibold mb-4">Navigation</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="index.html" class="hover:text-white transition">Accueil</a></li>
-                            <li><a href="commercial.html" class="hover:text-white transition">Informations commerciales</a></li>
-                            <li><a href="support.html" class="hover:text-white transition">Support</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-semibold mb-4">Légal</h4>
-                        <ul class="space-y-2 text-sm">
-                            <li><a href="mentions-legales.html" class="hover:text-white transition">Mentions légales</a></li>
-                            <li><a href="politique-confidentialite.html" class="hover:text-white transition">Politique de confidentialité</a></li>
-                            <li><a href="cgu.html" class="hover:text-white transition">CGU</a></li>
-                        </ul>
-                    </div>
+    <footer class="border-t border-[var(--glass-border)] py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8 mb-10">
+                <div>
+                    <div class="flex items-center gap-2 mb-4"><img src="logo.png" alt="Peeksou" class="h-8 w-auto brightness-0 invert opacity-90"><span class="text-white font-semibold">Peeksou</span></div>
+                    <p class="text-sm text-[var(--text-secondary)] leading-relaxed">Simplificateur de budget long terme. Change de vision. Passe tes projets en priorité.</p>
                 </div>
-                <div class="border-t border-gray-800 pt-8 text-center text-sm">
-                    <p>&copy; 2025 PeekSou. Tous droits réservés.</p>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                        <li><a href="index.html" class="hover:text-white transition">Accueil</a></li>
+                        <li><a href="commercial.html" class="hover:text-white transition">Informations commerciales</a></li>
+                        <li><a href="support.html" class="hover:text-white transition">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Légal</h4>
+                    <ul class="space-y-2 text-sm text-[var(--text-secondary)]">
+                        <li><a href="mentions-legales.html" class="hover:text-white transition">Mentions légales</a></li>
+                        <li><a href="politique-confidentialite.html" class="hover:text-white transition">Politique de confidentialité</a></li>
+                        <li><a href="cgu.html" class="hover:text-white transition">CGU</a></li>
+                    </ul>
                 </div>
             </div>
+            <div class="pt-8 border-t border-[var(--glass-border)] text-center text-sm text-[var(--text-muted)]"><p>&copy; 2025 Peeksou. Tous droits réservés.</p></div>
         </div>
     </footer>
 
